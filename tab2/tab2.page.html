@@ -1,0 +1,42 @@
+<ion-header color='primary'>
+  <ion-toolbar color='primary'>
+    <ion-title>
+      Post a new message
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label position='floating'>message</ion-label>
+        <ion-input [(ngModel)]='model.text' name='text' ></ion-input>
+      </ion-item>
+      
+
+      <ion-item>
+        <ion-label position='floating'>url</ion-label>
+        <ion-input [(ngModel)]='model.imageUrl' name='url'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position='floating'>To</ion-label>
+        <ion-select [(ngModel)]='model.to' name='to' interface="alert">
+          <ion-select-option value='Everyone'>Everyone</ion-select-option>
+          <ion-select-option *ngFor='let friend of friendsToDisplay' [value]='friend.name'>{{friend.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+
+      <ion-button (click)='post()' expand='block' size='large' position='floating'>  <ion-icon name="paper-plane-outline"></ion-icon></ion-button>
+
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

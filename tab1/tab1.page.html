@@ -1,0 +1,27 @@
+<ion-header >
+  <ion-toolbar color='primary'>
+    <ion-title>
+      Coming soon... 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- page content -->
+
+  <ion-card *ngFor='let message of messagesToDisplay'>
+    <ion-card-header>
+      <ion-card-title> {{message.text}}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <img src="{{message.imageUrl}}">
+      <ion-card-subtitle>from:{{message.from}}</ion-card-subtitle>
+      <ion-card-subtitle>to:{{message.to}}</ion-card-subtitle>
+      <ion-card-subtitle>to:{{message.createdOn | date: 'MM-dd-yyyy hh:mm:ss'}}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+
+
+  
+</ion-content>
